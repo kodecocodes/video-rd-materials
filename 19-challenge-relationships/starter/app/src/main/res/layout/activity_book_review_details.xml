@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2020 Razeware LLC
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in
+  ~ all copies or substantial portions of the Software.
+  ~
+  ~ Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+  ~ distribute, sublicense, create a derivative work, and/or sell copies of the
+  ~ Software in any work that is designed, intended, or marketed for pedagogical or
+  ~ instructional purposes related to programming, coding, application development,
+  ~ or information technology.  Permission for such use, copying, modification,
+  ~ merger, publication, distribution, sublicensing, creation of derivative works,
+  ~ or sale is expressly withheld.
+  ~
+  ~ This project and source code may use libraries or frameworks that are
+  ~ released under various Open-Source licenses. Use of those libraries and
+  ~ frameworks are governed by their own individual licenses.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  ~ THE SOFTWARE.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/imageGuideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.7" />
+
+  <ImageView
+    android:id="@+id/bookImage"
+    android:layout_width="0dp"
+    android:layout_height="150dp"
+    android:layout_marginEnd="@dimen/default_margin"
+    android:scaleType="fitXY"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/imageGuideline"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:id="@+id/reviewTitle"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_margin"
+    android:textColor="@color/colorPrimary"
+    android:textSize="@dimen/title_text_size"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toStartOf="@id/imageGuideline"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="Catcher In The Rye" />
+
+  <TextView
+    android:id="@+id/ratingText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_margin"
+    android:layout_marginTop="@dimen/half_margin"
+    android:includeFontPadding="false"
+    android:text="@string/rating_text"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/reviewTitle" />
+
+  <RatingBar
+    android:id="@+id/reviewRating"
+    style="@style/Widget.AppCompat.RatingBar.Small"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/half_margin"
+    app:layout_constraintBottom_toBottomOf="@id/ratingText"
+    app:layout_constraintStart_toEndOf="@id/ratingText"
+    app:layout_constraintTop_toTopOf="@id/ratingText" />
+
+  <TextView
+    android:id="@+id/bookGenre"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_margin"
+    android:layout_marginTop="@dimen/half_margin"
+    android:textStyle="italic"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/reviewRating"
+    tools:text="Horror" />
+
+  <TextView
+    android:id="@+id/lastUpdated"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_margin"
+    android:layout_marginTop="@dimen/half_margin"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/bookGenre"
+    tools:text="Last updated: 9/10/2011" />
+
+  <androidx.cardview.widget.CardView
+    android:id="@+id/reviewCard"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_margin"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/bookImage">
+
+    <TextView
+      android:id="@+id/reviewDescription"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_margin"
+      android:ellipsize="end"
+      android:maxLines="4"
+      android:textSize="@dimen/description_text_size"
+      tools:text="Another amazing piece of work from H.P. Lovecraft, depicting an ominous and stunning journey through the Dreamlands, the magical place where Randolph Carter seeks to find the cold and hidden city of Kadath, home to the Outer Gods." />
+  </androidx.cardview.widget.CardView>
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/readingEntriesRecyclerView"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="@dimen/default_margin"
+    android:clipToPadding="false"
+    android:paddingBottom="48dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/reviewCard" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/addReadingEntry"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_margin"
+    android:src="@drawable/ic_library_add_black_24dp"
+    android:tint="@color/white"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
