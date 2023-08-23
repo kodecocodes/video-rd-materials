@@ -47,9 +47,4 @@
     android:title="@string/book_reviews"
     app:showAsAction="ifRoom" />
 
-  <item
-    android:id="@+id/readingList"
-    android:icon="@drawable/ic_library_books_black_24dp"
-    android:title="@string/reading_list"
-    app:showAsAction="ifRoom" />
 </menu>

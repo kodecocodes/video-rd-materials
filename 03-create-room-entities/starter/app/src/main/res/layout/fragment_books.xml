@@ -72,6 +72,19 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent" />
   </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+  <TextView
+    android:id="@+id/messageTextView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="18sp"
+    android:textColor="@color/design_default_color_error"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_margin="16dp"
+    android:visibility="gone"
+    android:gravity="center_horizontal"/>
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/addBook"
