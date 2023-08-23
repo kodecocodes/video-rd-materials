@@ -35,6 +35,16 @@
 
 package com.kodeco.android.librarian.model
 
-
-
-// Todo 2: Add Book Entity
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import java.util.UUID
+@Entity(tableName = "books")
+data class Book(
+  @PrimaryKey
+  val id: String = UUID.randomUUID().toString(),
+  val name: String,
+  val description: String,
+  @ColumnInfo(name = "bookGenreId")
+  val genreId: String
+)

@@ -34,13 +34,23 @@
 
 package com.kodeco.android.librarian.di
 
+import androidx.room.Room
+import com.kodeco.android.librarian.database.LibrarianDatabase
 import com.kodeco.android.librarian.ui.viewmodel.BookViewModel
 import com.kodeco.android.librarian.ui.viewmodel.ReviewViewModel
 import kotlinx.coroutines.Dispatchers
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val databaseModule = module {
+  single{
+    Room.databaseBuilder(
+      androidContext(),
+      LibrarianDatabase::class.java,
+      "librarian-database"
+    ).build()
+  }
 
 }
 

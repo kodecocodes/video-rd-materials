@@ -34,4 +34,15 @@
 
 package com.kodeco.android.librarian.database
 
-// TODO: Create Room Database
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import com.kodeco.android.librarian.model.Book
+
+const val DATABASE_VERSION = 1
+@Database(
+  entities = [Book::class],
+  version = DATABASE_VERSION
+)
+abstract class LibrarianDatabase: RoomDatabase(){
+
+}
