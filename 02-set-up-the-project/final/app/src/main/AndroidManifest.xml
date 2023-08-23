@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
-  package="com.raywenderlich.android.librarian">
+  package="com.kodeco.android.librarian">
 
   <uses-permission android:name="android.permission.INTERNET" />
 
   <application
-    android:name=".App"
+    android:name="com.kodeco.android.librarian.LibrarianApp"
     android:allowBackup="false"
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
@@ -17,17 +17,17 @@
 
     <!-- Main Activity -->
     <activity
-      android:name=".ui.main.MainActivity"
-      android:theme="@style/SplashTheme">
+      android:name="com.kodeco.android.librarian.ui.main.MainActivity"
+      android:theme="@style/SplashTheme"
+        android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
 
-    <activity android:name=".ui.readingListDetails.ReadingListDetailsActivity" />
-    <activity android:name=".ui.bookReviewDetails.BookReviewDetailsActivity" />
-    <activity android:name=".ui.addBook.AddBookActivity" />
-    <activity android:name=".ui.addReview.AddBookReviewActivity" />
+    <activity android:name="com.kodeco.android.librarian.ui.bookReviewDetails.BookReviewDetailsActivity" />
+    <activity android:name="com.kodeco.android.librarian.ui.addBook.AddBookActivity" />
+    <activity android:name="com.kodeco.android.librarian.ui.addReview.AddBookReviewActivity" />
   </application>
 </manifest>
